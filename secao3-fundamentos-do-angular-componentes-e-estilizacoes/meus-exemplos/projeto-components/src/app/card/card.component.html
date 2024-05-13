@@ -1,5 +1,18 @@
 <div class="card">
-    <div class="card__plan card__item">Plano <strong>Simples</strong></div>
-    <div class="card__price card__item">R$100,00/Mês</div>
-    <app-card-button></app-card-button>
+  <div class="card__plan card__item">
+    Plano <strong>{{ tipo }}</strong>
+  </div>
+  <div class="card__price card__item">{{ getFullPrice() }}</div>
+  <app-card-button></app-card-button>
 </div>
+
+
+<div class="card" style="margin-top: 10px;">
+    <div class="card__plan card__item">
+      Plano <strong>{{ plano.infos.tipoPlano }}</strong>
+    </div>
+    <div class="card__price card__item">{{ plano.infos.precoPlano }}</div>
+    <app-card-button></app-card-button>
+  </div>
+
+  <!-- Interpolação {{ variavel/method }} -->

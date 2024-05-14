@@ -1,5 +1,14 @@
 import { Component } from '@angular/core';
-import { info } from 'console';
+
+
+interface IPlan{
+  infos: IInfos
+}
+
+interface IInfos{
+  tipo: string;
+  preco: number;
+}
 
 @Component({
   selector: 'app-card', //tag html do component
@@ -9,17 +18,33 @@ import { info } from 'console';
 
 //Classe - Modelagem do objeto + Lógica de serviço
 export class CardComponent {
- tipo = 'Teste';
- preco = 100;
+  tipo = 'Teste'; //Se undefined não será mostrado nada
+  preco = 100;
 
-   //Object
-   plano = {
+  //Object
+  plano = {
     infos: {
-      tipoPlano: 'Simples',
-      precoPlano: 'R$100,00/Mês',
+      tipo: 'Simples',
+      preco: 100,
     },
   };
 
+  //Object Undefined - gera erro em tempo de execução(para o cliente) e não de desenvolvimento
+  //ex: ERROR TypeError: ctx.plano2 is undefined
+  /*
+    Neste, caso utilização o Optional Change - ? na frente da propriedade
+    para que seja retornado 'undefined' e não mostre nada, mas também, não
+    gera exceção de runtime.
+    ex: plano2?.tipo
+  */
+
+  //@ts-ignore
+  plano2: any = {//NG9: Property 'tipoPlano' does not exist on type 'never'.
+    infos: undefined,
+  };
+  //Object vazios e normais em situações em que ele só se tornaram
+  //objetos após a eecução de uma ação por isso a necessidade do ? para não
+  // gerar erros.
 
   ngOnInit() {
     setTimeout(() => {
@@ -29,11 +54,8 @@ export class CardComponent {
 
   getFullPrice() {
     return 'R$' + this.preco + ',00/Mês';
-  }//method
-
-
-
-}//class
+  } //method
+} //class
 
 /*
   Binding - Fazer a associação de um atributo/method

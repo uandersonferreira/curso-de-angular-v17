@@ -6,13 +6,31 @@
   <app-card-button></app-card-button>
 </div>
 
+<!-- Interpolação {{ variavel/method }} -->
 
-<div class="card" style="margin-top: 10px;">
-    <div class="card__plan card__item">
-      Plano <strong>{{ plano.infos.tipoPlano }}</strong>
-    </div>
-    <div class="card__price card__item">{{ plano.infos.precoPlano }}</div>
-    <app-card-button></app-card-button>
+<div class="card" style="margin-top: 10px">
+  <div class="card__plan card__item">
+    Plano <strong>{{ plano.infos.preco }}</strong>
   </div>
+  <div class="card__price card__item">R${{ plano.infos.preco }},00/Mês</div>
+  <app-card-button></app-card-button>
+</div>
 
-  <!-- Interpolação {{ variavel/method }} -->
+<hr>
+
+<!--  Ex. Encadeamento Opcional na interpolação, caso um objeto/atributo seja undefined/nullo/inexistente-->
+<div class="card" style="margin-top: 10px">
+  <div class="card__plan card__item">
+    Plano <strong>{{ plano2.infos?.preco }}</strong>
+  </div>
+  <div class="card__plan card__item">
+    <!-- Nesse exemplo, estamos utilizanod um if ternário, para retornar uma string caso seja 'undefined' -->
+    Plano
+    <strong>{{
+      plano2.infos?.preco ? plano2.infos.preco : "Vazio"
+    }}</strong>
+  </div>
+  <div class="card__price card__item">R${{ plano2.infos?.preco }},00/Mês</div>
+  <app-card-button></app-card-button>
+</div>
+

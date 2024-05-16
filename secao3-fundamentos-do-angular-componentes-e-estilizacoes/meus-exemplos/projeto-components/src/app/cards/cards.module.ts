@@ -4,15 +4,16 @@ import { CardComponent } from '../card/card.component';
 import { CardRoxoButtonComponent } from '../card-roxo-button/card-roxo-button.component';
 import { CardButtonComponent } from '../card-button/card-button.component';
 import { CardRoxoComponent } from '../card-roxo/card-roxo.component';
+import { CardButtonCancelComponent } from '../card-button-cancel/card-button-cancel.component';
 
 @NgModule({
   declarations: [
     /*
-    
+
     @Component declarado em mais de um "@NgModule" - isso é errado.
     pois quando precisamos IMPORTAR esse módulo irá dar erro
     caso não importe o módulo irá executar normalmente, mas estamos criando um problema oculto
-    que pode dar muita dor de cabeça futuramente. 
+    que pode dar muita dor de cabeça futuramente.
 
     OBS: Para usar um @Component de um Modulo em outro modulo a gente segue os seguintes passos:
       1° - Exportar o componente
@@ -22,13 +23,14 @@ import { CardRoxoComponent } from '../card-roxo/card-roxo.component';
     CardComponent,
     CardRoxoComponent,
     CardButtonComponent,
-    CardRoxoButtonComponent
+    CardRoxoButtonComponent,
+    CardButtonCancelComponent
   ],
   imports: [CommonModule],
   //1° - [PASSO] Declara que os components desse módulo pode ser vistos/usados
-  //por outros módulos > torna eles protected/public,pois para usar teremos que 
+  //por outros módulos > torna eles protected/public,pois para usar teremos que
   //importar esse módulo [extends do java]. "Podem ser consumidos"
-  exports: [ 
+  exports: [
     CardComponent,
     CardRoxoComponent,
     /*
@@ -37,7 +39,7 @@ import { CardRoxoComponent } from '../card-roxo/card-roxo.component';
       de ser exporta, mas caso queira utilizar os buttons personalizados
       deveriamos exportar eles também.
     */
-    // CardButtonComponent, 
+    // CardButtonComponent,
     CardRoxoButtonComponent //Exportando para demonstrar o exemplo descrito acima.
   ]
 })

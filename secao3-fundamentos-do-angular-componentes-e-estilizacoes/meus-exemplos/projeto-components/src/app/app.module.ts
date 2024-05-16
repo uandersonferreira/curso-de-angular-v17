@@ -13,30 +13,29 @@ import { CardsModule } from './cards/cards.module';
   declarations: [
     //Declaração dos componentes - @Component desse módulo
     AppComponent,
-
         /*
-    
+
     @Component declarado em mais de um "@NgModule" - isso é errado.
     pois quando precisamos IMPORTAR esse módulo irá dar erro
     caso não importe o módulo irá executar normalmente, mas estamos criando um problema oculto
-    que pode dar muita dor de cabeça futuramente. 
+    que pode dar muita dor de cabeça futuramente.
 
     OBS: Para usar um @Component de um Modulo em outro modulo a gente segue os seguintes passos:
       1° - Exportar o(s) componente(s)
       2° - Importar o modulo desse component no 'imports' do módulo
-          que queremos usar o component. Pois não 
+          que queremos usar o component. Pois não
           declaramos @Components de modulo diferentes em nosso módulo.
-        
-    ex:CardComponent,  [ERRADO]   
+
+    ex:CardComponent,  [ERRADO]
     */
-          
+
   ],
 
   //2° - [PASSO] É importar o modulo que queremos utilizar os components
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CardsModule 
+    CardsModule
     /*
       Nesse array estamos importando todos os módulos, que
       desejamos utilizar alguma funcionalidade.

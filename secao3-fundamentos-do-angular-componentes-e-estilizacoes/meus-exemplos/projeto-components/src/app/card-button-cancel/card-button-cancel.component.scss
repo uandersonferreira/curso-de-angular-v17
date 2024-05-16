@@ -1,0 +1,11 @@
+  /*
+    E ao utiliza style externo(styleUrl) + interno(styles) caso
+    aplique um style diferente.será feito a mesclagem dos stilos
+    definidos em ambos os arquivos.
+    ex: color: yellow;
+    - pega o stilo do externo + interno e irá aplicar.
+  */
+.card-cancel-button {
+  // background-color: black;
+  color: yellow;
+}

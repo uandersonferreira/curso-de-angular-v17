@@ -1,11 +1,27 @@
-  /*
+/*
     E ao utiliza style externo(styleUrl) + interno(styles) caso
     aplique um style diferente.será feito a mesclagem dos stilos
     definidos em ambos os arquivos.
     ex: color: yellow;
     - pega o stilo do externo + interno e irá aplicar.
+
+    E possível utilizar mais de um file de style, sendo o
+    2° - com preferência default, mas se caso no 1° a declaração do css
+    seja mais espeficia terá a preferência.
+    ex:
+        2° - .card-cancel-button {background-color: black;}
+        1° - div.card-cancel-button {background-color: black;} especifica que a class e de um div
+
   */
-.card-cancel-button {
-  // background-color: black;
+div.card-cancel-button {
+  background-color: green;
   color: yellow;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
 }
+

@@ -20,3 +20,26 @@
     font-size: 40px;
   }
 }
+
+:host ::ng-deep mat-slider .mdc-slider__track--active_fill {
+  /*
+    Terceiro Caso de Uso com "::ng-deep" e ":host"
+    Mudando o Style de Componentes Externos (Angular material)
+
+    1° - exemplo - estamos aplicando a mudança no elemnto(tag)
+          que tiver a tag(mat-slider) e sua class for .mdc-slider__track--active_fill
+  */
+  border-color: rgb(133, 5, 90) !important;
+}
+
+/*
+    Terceiro Caso de Uso com "::ng-deep" e ":host"
+    Mudando o Style de Componentes Externos (Angular material)
+
+    2° - exemplo - estamos aplicando a mudança no elemnto(tag)
+          que tiver as class .mat-mdc-slider .mdc-slider__track--active_fill
+
+:host ::ng-deep  .mat-mdc-slider  .mdc-slider__track--active_fill {
+  border-color: rgb(133, 5, 90) !important;
+}
+ */

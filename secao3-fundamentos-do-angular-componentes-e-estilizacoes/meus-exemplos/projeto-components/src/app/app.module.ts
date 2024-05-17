@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CardComponent } from './card/card.component';
-import { CardRoxoComponent } from './card-roxo/card-roxo.component';
-import { CardButtonComponent } from './card-button/card-button.component';
-import { CardRoxoButtonComponent } from './card-roxo-button/card-roxo-button.component';
 import { CardsModule } from './cards/cards.module';
 
 @NgModule({
@@ -43,7 +40,8 @@ import { CardsModule } from './cards/cards.module';
   ],
 
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]//1° Component a ser carregado (o conteúdo do .html)
 })

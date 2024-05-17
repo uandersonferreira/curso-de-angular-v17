@@ -1,5 +1,19 @@
+
 app-card-button-cancel .card-cancel-button{
   //Aqui não há necessidade do ::ng-deep, pois já estamos
   //na camda de estilo mais alta da aplicação.
   background-color: yellow !important;
+}
+
+.mat-mdc-slider .mdc-slider__track--active_fill {
+  /*
+    Terceiro Caso de Uso com "::ng-deep" e ":host"
+    Mudando o Style de Componentes Externos (Angular material)
+  */
+  border-color: rgb(37, 209, 103) !important;
+}
+
+.mat-mdc-slider .mdc-slider__thumb-knob {
+  background-color: rgb(37, 209, 103) !important;
+  border-color: rgb(37, 209, 103) !important;
 }

@@ -1,10 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent } from '../card/card.component';
-import { CardRoxoButtonComponent } from '../card-roxo-button/card-roxo-button.component';
-import { CardButtonComponent } from '../card-button/card-button.component';
-import { CardRoxoComponent } from '../card-roxo/card-roxo.component';
+import { NgModule } from '@angular/core';
+import { MatSliderModule } from '@angular/material/slider';
+
 import { CardButtonCancelComponent } from '../card-button-cancel/card-button-cancel.component';
+import { CardButtonComponent } from '../card-button/card-button.component';
+import { CardRoxoButtonComponent } from '../card-roxo-button/card-roxo-button.component';
+import { CardRoxoComponent } from '../card-roxo/card-roxo.component';
+import { CardComponent } from '../card/card.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,9 @@ import { CardButtonCancelComponent } from '../card-button-cancel/card-button-can
     CardRoxoComponent,
     CardButtonComponent,
     CardRoxoButtonComponent,
-    CardButtonCancelComponent
+    CardButtonCancelComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, MatSliderModule],
   //1° - [PASSO] Declara que os components desse módulo pode ser vistos/usados
   //por outros módulos > torna eles protected/public,pois para usar teremos que
   //importar esse módulo [extends do java]. "Podem ser consumidos"
@@ -40,7 +42,7 @@ import { CardButtonCancelComponent } from '../card-button-cancel/card-button-can
       deveriamos exportar eles também.
     */
     // CardButtonComponent,
-    CardRoxoButtonComponent //Exportando para demonstrar o exemplo descrito acima.
-  ]
+    CardRoxoButtonComponent, //Exportando para demonstrar o exemplo descrito acima.
+  ],
 })
 export class CardsModule {}

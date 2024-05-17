@@ -21,6 +21,21 @@
   }
 }
 
+.global{
+  background-color: greenyellow;
+}
+
+.card-cancel-button{
+  /*
+  Por causa da confg: encapsulation: ViewEncapsulation.None
+  Os sstyles definidos aqui ficam em scopo global e não é preciso
+  utilizar o ::ng-deep para alterar os filhos.
+  
+  */
+  background-color: rgb(245, 30, 120) !important;
+  border: 1px solid black !important;
+}
+
 :host ::ng-deep mat-slider .mdc-slider__track--active_fill {
   /*
     Terceiro Caso de Uso com "::ng-deep" e ":host"

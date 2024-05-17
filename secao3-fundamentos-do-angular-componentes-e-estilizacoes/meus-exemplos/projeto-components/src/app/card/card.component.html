@@ -4,7 +4,46 @@
   </div>
   <div class="card__price card__item">{{ getFullPrice() }}</div>
   <app-card-button></app-card-button>
-  <app-card-button-cancel></app-card-button-cancel>
+
+  <app-card-button-cancel class="cancel-button"></app-card-button-cancel>
+  <app-card-button-cancel class="cancel-button"></app-card-button-cancel>
+
+      <!--
+      [CUIDADO]!!!
+      Pois o ::ng-deep, NÃO É APENAS PARA VERIFICAR OS
+      ELEMENTOS FILHOS, ele irá verificar TUDO.
+      por isso que ele modifica ele elementos do Pai
+        <h2 class="card-cancel-button-2">TESTE</h2>
+      e também o h2 do Filho que tiver a class 'card-cancel-button-2'
+    -->
+  <h2 class="card-cancel-button-2">TESTE</h2>
+
+  <!--
+    ::ng-deep - é um pseudo-seletor utilizado em Angular para estilos
+     que precisam ser aplicados a componentes filhos, atravessando os
+    limites de encapsulamento de estilos do Angular. Este pseudo-seletor
+    permite que os estilos definidos em um componente pai afetem componentes
+    filhos ou elementos dentro de componentes filhos, algo que normalmente não
+    é permitido devido ao encapsulamento de estilos em Angular.
+    (muitoutilizado em bibliotecas de terceiros)
+
+    - aplica o style para todos qu têm a class, torna-se um estilo global.
+   sintaxe:
+    ::ng-deep .class-que-deseja-alterar
+
+    ::ng-deep .card-cancel-button{
+      background-color: rgb(131, 14, 106) !important;
+    }
+
+    Para fazer mudanças em apenas um elemento utilize a estrategia
+    dos id="cancel-button" ou class para vários, lembre-se do comportamento do ng-deep
+    ex:
+    ::ng-deep .cancel-button .card-cancel-button{
+      background-color: rgb(131, 14, 106) !important;
+    }
+
+  -->
+
 </div>
 
 <!-- Interpolação {{ variavel/method }} -->

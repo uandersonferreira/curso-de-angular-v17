@@ -2,11 +2,11 @@
 
 .card{
     max-width: 350px;
-    background-color: #ff2f00;
+    background-color: #fd7557;
     border-radius: 25px;
     padding: 30px;
     font-family: 'Poppins, sans-serif';
-    
+
     &__item{
         padding: 10px;
     }
@@ -20,4 +20,15 @@
         font-size: 40px;
     }
 
+}
+// Style aplicado aqui por padrão não influencia
+//nos components filhos e separado, cada um têm seu style
+
+//Alterando o style do component filho com
+::ng-deep .cancel-button .card-cancel-button{
+  background-color: rgb(4, 170, 142) !important;
+}
+
+::ng-deep  .card-cancel-button-2{
+  background-color: rgb(255, 70, 178) !important;
 }

@@ -2,4 +2,24 @@
     <div class="card__plan card__item">Plano <strong>Simples</strong></div>
     <div class="card__price card__item">R$100,00/Mês</div>
     <app-card-roxo-button></app-card-roxo-button>
-</div>
+
+    <!--
+      [CUIDADO]!!
+      ::ng-deep - irá alterar o style do component, mesmo se
+      estiver fora do style onde ele foi definido, pois irá buscar
+      por TODOS os elementos que possuem a .class na qual ele
+      foi aplicado para alterar o comportamento.
+
+      elemento: app-card-button-cancel possui a class .card-cancel-button
+    -->
+    <app-card-button-cancel id="cancel-button"></app-card-button-cancel>
+
+    <h2 class="card-cancel-button-2">TESTE</h2>
+    <!--
+      [CUIDADO]!!!
+      Pois o ::ng-deep, NÃO É APENAS PARA VERIFICAR OS
+      ELEMENTOS FILHOS, ele irá verificar TUDO.
+      por isso que ele modifica ele elementos filho
+      e também o h2 do Pai.
+    -->
+  </div>

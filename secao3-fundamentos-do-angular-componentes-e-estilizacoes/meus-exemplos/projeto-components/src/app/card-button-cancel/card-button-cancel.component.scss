@@ -13,8 +13,19 @@
         1° - div.card-cancel-button {background-color: black;} especifica que a class e de um div
 
   */
+// @import "../../styles/variables";
+@import "variables";
+/*
+@import "variables"; - Precisa configurar no angular.json para funcionar
+"stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
+*/
+
 div.card-cancel-button {
-  background-color: green;
+  background-color: $bgColor;
   color: yellow;
   font-size: 16px;
   text-align: center;
@@ -24,4 +35,3 @@ div.card-cancel-button {
   font-weight: bold;
   padding: 10px;
 }
-

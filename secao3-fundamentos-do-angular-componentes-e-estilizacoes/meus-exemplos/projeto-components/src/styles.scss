@@ -1,2 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+//Aqui fica as regras em nível global, afetam toda a aplicação
+
+@import "./styles/global-overrides" //por questão de organização dos styles global
+//criamos um file com os styles e só importamos aqui.
+

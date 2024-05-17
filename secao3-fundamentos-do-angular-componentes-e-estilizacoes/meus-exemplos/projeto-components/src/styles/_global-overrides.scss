@@ -1,0 +1,5 @@
+app-card-button-cancel .card-cancel-button{
+  //Aqui não há necessidade do ::ng-deep, pois já estamos
+  //na camda de estilo mais alta da aplicação.
+  background-color: yellow !important;
+}

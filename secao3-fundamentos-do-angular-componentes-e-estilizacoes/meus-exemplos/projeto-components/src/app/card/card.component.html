@@ -5,8 +5,17 @@
   <div class="card__price card__item">{{ getFullPrice() }}</div>
   <app-card-button></app-card-button>
 
-  <app-card-button-cancel class="cancel-button"></app-card-button-cancel>
-  <app-card-button-cancel class="cancel-button"></app-card-button-cancel>
+  <app-card-button-cancel id="cancel-button-2"></app-card-button-cancel>
+
+  <!--
+    ex. :host + ::ng-deep scopo local SEMPRE USAR O :host
+  Aplica a mudança do style nos elementos somente daquele scopo
+  ou seja os filhos e pai, mas daquele component, não vaza para os demais
+  component por causa do :host, se mais de um elementos
+  utilizar a tag/class irá aplicar para todos do scopo.
+  -->
+  <app-card-button-cancel></app-card-button-cancel>
+  <div class="card-cancel-button">TESTE SCOPO LOCAL :HOST</div>
 
       <!--
       [CUIDADO]!!!
@@ -34,6 +43,7 @@
     ::ng-deep .card-cancel-button{
       background-color: rgb(131, 14, 106) !important;
     }
+    [OBS] !important - sem isso não irá aplicar o stilo
 
     Para fazer mudanças em apenas um elemento utilize a estrategia
     dos id="cancel-button" ou class para vários, lembre-se do comportamento do ng-deep

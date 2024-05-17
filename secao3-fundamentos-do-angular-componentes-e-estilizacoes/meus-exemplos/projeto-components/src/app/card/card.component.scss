@@ -21,20 +21,6 @@
   }
 }
 
-.global{
-  background-color: greenyellow;
-}
-
-.card-cancel-button{
-  /*
-  Por causa da confg: encapsulation: ViewEncapsulation.None
-  Os sstyles definidos aqui ficam em scopo global e não é preciso
-  utilizar o ::ng-deep para alterar os filhos.
-  
-  */
-  background-color: rgb(245, 30, 120) !important;
-  border: 1px solid black !important;
-}
 
 :host ::ng-deep mat-slider .mdc-slider__track--active_fill {
   /*
@@ -58,3 +44,28 @@
   border-color: rgb(133, 5, 90) !important;
 }
  */
+
+ .global{
+  background-color: greenyellow;
+}
+
+.card-cancel-button{
+  /*
+  Por causa da confg: encapsulation: ViewEncapsulation.None
+  Os sstyles definidos aqui ficam em scopo global e não é preciso
+  utilizar o ::ng-deep para alterar os filhos.
+
+  */
+  background-color: rgb(245, 30, 120) !important;
+  border: 1px solid black !important;
+}
+
+.emulated{
+  //Style local, somente para o component - default, mas
+  //Styles globais podem afetar o component - definidos em styles.scss da raiz
+  background-color: red;
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 4px;
+  text-align: center;
+}

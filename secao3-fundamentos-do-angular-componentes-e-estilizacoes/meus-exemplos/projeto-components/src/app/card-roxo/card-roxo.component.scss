@@ -28,3 +28,13 @@
 :host ::ng-deep #segundo .card-cancel-button {
   background-color: rgb(231, 58, 15) !important;
 }
+
+.emulated{
+  //Style local, somente para o component - default, mas
+  //Styles globais podem afetar o component - definidos em styles.scss da raiz
+  background-color: rgb(4, 0, 255);
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 4px;
+  text-align: center;
+}

@@ -14,7 +14,8 @@ interface IInfos{
   selector: 'app-card', //tag html do component
   templateUrl: './card.component.html', //file .html do component
   styleUrl: './card.component.scss', // file .css do component
-  encapsulation: ViewEncapsulation.None //Não é recomendado
+  //encapsulation: ViewEncapsulation.None //Não é recomendado
+  encapsulation: ViewEncapsulation.Emulated //padrão default
   /*
   encapsulation: ViewEncapsulation.None:
   O Angular não aplica nenhum tipo de encapsulamento de visualização,
@@ -23,6 +24,13 @@ interface IInfos{
   HTML presente dentro do aplicativo. Este modo é essencialmente o mesmo
   que incluir os estilos no próprio HTML.
   Ficam 'Global' em toda a aplicação
+
+  ViewEncapsulation.Emulated (padrão):
+  O Angular modifica os seletores CSS do componente para que eles
+  sejam aplicados apenas ao modo de exibição do componente e não
+  afetem outros elementos no aplicativo, emulando o comportamento
+  do Shadow DOM. Styles globais podem afetar o component.
+
   */
 })
 

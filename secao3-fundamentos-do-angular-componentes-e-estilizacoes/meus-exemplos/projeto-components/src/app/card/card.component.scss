@@ -49,16 +49,16 @@
   background-color: greenyellow;
 }
 
-.card-cancel-button{
-  /*
-  Por causa da confg: encapsulation: ViewEncapsulation.None
-  Os sstyles definidos aqui ficam em scopo global e não é preciso
-  utilizar o ::ng-deep para alterar os filhos.
+// .card-cancel-button{
+//   /*
+//   Por causa da confg: encapsulation: ViewEncapsulation.None
+//   Os sstyles definidos aqui ficam em scopo global e não é preciso
+//   utilizar o ::ng-deep para alterar os filhos.
 
-  */
-  background-color: rgb(245, 30, 120) !important;
-  border: 1px solid black !important;
-}
+//   */
+//   background-color: rgb(245, 30, 120) !important;
+//   border: 1px solid black !important;
+// }
 
 .emulated{
   //Style local, somente para o component - default, mas

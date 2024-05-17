@@ -15,3 +15,21 @@
   background-color: brown;
 }
  */
+
+ /*
+ 1° CASO [STYLE]
+  Não irá afetar os elementos do component definido como:
+   - encapsulation: ViewEncapsulation.ShadowDom
+   Mesmo que possuam a class definida e o estilo aplicado globalmente,
+   pois estão isolado/privados. Mas para qualquer outro o style irá se aplicado.
+ */
+
+ .card-cancel-button{
+  background-color: brown !important;
+  padding: 8px !important;
+  border-radius: 8px !important;
+  margin-top: 4px !important;
+  text-align: center !important;
+ }
+
+

@@ -1,2 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
 
+//Aqui fica as regras em nível global, afetam toda a aplicação
+
+//@import "./styles/global-overrides"; //por questão de organização dos styles global
+//criamos um file com os styles e só importamos aqui.
+
+/*
+.global{
+
+  O stilo do component setado com o encapsulation: ViewEncapsulation.None
+  terá prevalência até mesmo sobre o style global da aplicação.
+  no caso: o que está definido em card.component.scss
+
+  background-color: brown;
+}
+ */
+
+ /*
+ 1° CASO [STYLE]
+  Não irá afetar os elementos do component definido como:
+   - encapsulation: ViewEncapsulation.ShadowDom
+   Mesmo que possuam a class definida e o estilo aplicado globalmente,
+   pois estão isolado/privados. Mas para qualquer outro o style irá se aplicado.
+ */
+
+ .card-cancel-button{
+  background-color: brown !important;
+  padding: 8px !important;
+  border-radius: 8px !important;
+  margin-top: 4px !important;
+  text-align: center !important;
+ }
+
+

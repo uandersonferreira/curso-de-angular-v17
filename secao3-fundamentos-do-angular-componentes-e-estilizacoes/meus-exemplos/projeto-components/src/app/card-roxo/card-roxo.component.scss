@@ -1,23 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-.card{
-    max-width: 350px;
-    background-color: #d1c5d8;
-    border-radius: 25px;
-    padding: 30px;
-    font-family: 'Poppins, sans-serif';
-    
-    &__item{
-        padding: 10px;
-    }
+.card {
+  max-width: 350px;
+  background-color: #d1c5d8;
+  border-radius: 25px;
+  padding: 30px;
+  font-family: "Poppins, sans-serif";
 
-    &__plan{
-        font-size: 22px;
-    }
+  &__item {
+    padding: 10px;
+  }
 
-    &__price{
-        font-weight: 600;
-        font-size: 40px;
-    }
+  &__plan {
+    font-size: 22px;
+  }
 
+  &__price {
+    font-weight: 600;
+    font-size: 40px;
+  }
+}
+
+:host ::ng-deep #primeiro .card-cancel-button {
+  background-color: darkmagenta !important;
+}
+
+:host ::ng-deep #segundo .card-cancel-button {
+  background-color: rgb(231, 58, 15) !important;
+}
+
+.emulated{
+  //Style local, somente para o component - default, mas
+  //Styles globais podem afetar o component - definidos em styles.scss da raiz
+  background-color: rgb(4, 0, 255);
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 4px;
+  text-align: center;
 }

@@ -1,43 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-.card{
-    max-width: 350px;
-    background-color: #fd7557;
-    border-radius: 25px;
-    padding: 30px;
-    font-family: 'Poppins, sans-serif';
+.card {
+  max-width: 350px;
+  background-color: #fd7557;
+  border-radius: 25px;
+  padding: 30px;
+  font-family: "Poppins, sans-serif";
 
-    &__item{
-        padding: 10px;
-    }
+  &__item {
+    padding: 10px;
+  }
 
-    &__plan{
-        font-size: 22px;
-    }
+  &__plan {
+    font-size: 22px;
+  }
 
-    &__price{
-        font-weight: 600;
-        font-size: 40px;
-    }
-
-}
-// Style aplicado aqui por padrão não influencia
-//nos components filhos e separado, cada um têm seu style
-
-//Alterando o style do component filho com
-::ng-deep #cancel-button-2 .card-cancel-button{
-  background-color: rgb(4, 170, 142) !important;
+  &__price {
+    font-weight: 600;
+    font-size: 40px;
+  }
 }
 
-::ng-deep  .card-cancel-button-2{
-  background-color: rgb(255, 70, 178) !important;
+
+:host ::ng-deep mat-slider .mdc-slider__track--active_fill {
+  /*
+    Terceiro Caso de Uso com "::ng-deep" e ":host"
+    Mudando o Style de Componentes Externos (Angular material)
+
+    1° - exemplo - estamos aplicando a mudança no elemnto(tag)
+          que tiver a tag(mat-slider) e sua class for .mdc-slider__track--active_fill
+  */
+  border-color: rgb(133, 5, 90) !important;
 }
 
-//Aplica a mudança do style nos elementos somente daquele scopo
-//ou seja os filhos e pai, mas daquele component, não vaza para os demais
-//component por causa do :host, se mais de um elementos
-//utilizar a tag/class irá aplicar para todos do scopo.
-:host ::ng-deep .card-cancel-button{
-  background-color: yellow !important;
-  color: black !important;
+/*
+    Terceiro Caso de Uso com "::ng-deep" e ":host"
+    Mudando o Style de Componentes Externos (Angular material)
+
+    2° - exemplo - estamos aplicando a mudança no elemnto(tag)
+          que tiver as class .mat-mdc-slider .mdc-slider__track--active_fill
+
+:host ::ng-deep  .mat-mdc-slider  .mdc-slider__track--active_fill {
+  border-color: rgb(133, 5, 90) !important;
+}
+ */
+
+ .global{
+  background-color: greenyellow;
+}
+
+// .card-cancel-button{
+//   /*
+//   Por causa da confg: encapsulation: ViewEncapsulation.None
+//   Os sstyles definidos aqui ficam em scopo global e não é preciso
+//   utilizar o ::ng-deep para alterar os filhos.
+
+//   */
+//   background-color: rgb(245, 30, 120) !important;
+//   border: 1px solid black !important;
+// }
+
+.emulated{
+  //Style local, somente para o component - default, mas
+  //Styles globais podem afetar o component - definidos em styles.scss da raiz
+  background-color: red;
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 4px;
+  text-align: center;
 }

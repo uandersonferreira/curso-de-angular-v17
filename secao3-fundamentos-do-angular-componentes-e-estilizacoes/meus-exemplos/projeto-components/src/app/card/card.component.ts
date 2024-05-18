@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 
 interface IPlan{
@@ -14,12 +14,39 @@ interface IInfos{
   selector: 'app-card', //tag html do component
   templateUrl: './card.component.html', //file .html do component
   styleUrl: './card.component.scss', // file .css do component
+  //encapsulation: ViewEncapsulation.None //Não é recomendado - Público/global
+  //encapsulation: ViewEncapsulation.Emulated //padrão default
+  encapsulation: ViewEncapsulation.ShadowDom //Isola o component/privado
+  /*
+  encapsulation: ViewEncapsulation.None:
+  O Angular não aplica nenhum tipo de encapsulamento de visualização,
+  o que significa que quaisquer estilos especificados para o componente
+  são realmente aplicados globalmente e podem afetar qualquer elemento
+  HTML presente dentro do aplicativo. Este modo é essencialmente o mesmo
+  que incluir os estilos no próprio HTML.
+  Ficam 'Global' em toda a aplicação
+
+  ViewEncapsulation.Emulated (padrão):
+  O Angular modifica os seletores CSS do componente para que eles
+  sejam aplicados apenas ao modo de exibição do componente e não
+  afetem outros elementos no aplicativo, emulando o comportamento
+  do Shadow DOM. Styles globais podem afetar o component.
+
+  encapsulation: ViewEncapsulation.ShadowDom:
+  Ele vai isolar o componente, cria uma camada onde nada que é de fora
+  vai afetar ele (global) e os styles local do component não irá afetar
+  outros componentes.
+  Exceção: Pode afetar somente os componentes filhos, referenciados no
+  template do component.
+
+  */
 })
 
 //Classe - Modelagem do objeto + Lógica de serviço
 export class CardComponent {
   tipo = 'Teste'; //Se undefined não será mostrado nada
   preco = 100;
+
 
   //Object
   plano = {
@@ -55,6 +82,8 @@ export class CardComponent {
   getFullPrice() {
     return 'R$' + this.preco + ',00/Mês';
   } //method
+
+
 } //class
 
 /*

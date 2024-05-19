@@ -1,0 +1,45 @@
+<input
+  id="meu-input"
+  [value]="inputText"
+  [type]="inputType"
+  [disabled]="isDisabled"
+/>
+<br /><br />
+
+<button (click)="enableInput()">Habilitar</button>
+<button (click)="disabledInput()">Desabilitar</button>
+
+<br /><br />
+
+<button (click)="setPasswordTypeInput()">Senha</button>
+<button (click)="setTextTypeInput()">Texto</button>
+
+<br /><br />
+
+<button (click)="logInputText()">Log</button>
+
+<!--
+
+  ATRIBUTO - value="Texto inicial"
+  PROPRIEDADE - [value] = "Texto inicial"
+
+  Property binding == Vinculação de propriedade
+
+Property binding no Angular é uma maneira de passar dados do componente
+TypeScript para o template HTML. Utiliza colchetes `[]` em torno do nome
+da propriedade HTML. Por exemplo:
+
+```html
+<img [src]="imageUrl">
+```
+
+COMPONENT -> para -> HTML
+
+[OBS] PROPRIEDADE - [value] = "Texto inicial"
+quando fazemos um property binding com o value
+ele não irá pegar o valor alterado dinamicamente
+a comunicação e entre a variavel definida no component
+e a propriedade:
+ex:  [value]="inputText"
+
+ -->
